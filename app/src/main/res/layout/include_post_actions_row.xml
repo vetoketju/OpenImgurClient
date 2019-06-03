@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <data>
+
+    <variable
+      name="post"
+      type="com.villevalta.imgur.model.Post"/>
+
+    <variable
+      name="commentClickListener"
+      type="android.view.View.OnClickListener"/>
+
+    <variable
+      name="shareClickListener"
+      type="android.view.View.OnClickListener"/>
+  </data>
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+      android:id="@+id/actions_votes"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingStart="@dimen/space_m"
+      android:paddingEnd="@dimen/space_m"
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/actions_comments"
+      app:layout_constraintHorizontal_chainStyle="spread_inside"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_m_with_padding_m"
+        android:layout_height="@dimen/size_m_with_padding_m"
+        android:padding="@dimen/space_m"
+        app:srcCompat="@drawable/ic_thumb_up_black_24dp"
+        app:tint="@color/whiteAlmost"/>
+
+      <TextView
+        style="@style/TextAppearance.SubtitleMini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:layout_marginEnd="@dimen/space_s"
+        android:text="@{post.pointsString}"
+        tools:text="-182 k"/>
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_m_with_padding_m"
+        android:layout_height="@dimen/size_m_with_padding_m"
+        android:padding="@dimen/space_m"
+        app:srcCompat="@drawable/ic_thumb_down_black_24dp"
+        app:tint="@color/whiteAlmost"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/actions_comments"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:paddingStart="@dimen/space_m"
+      android:paddingEnd="@dimen/space_m"
+      android:foreground="?attr/selectableItemBackground"
+      android:gravity="center_vertical"
+      android:onClick="@{commentClickListener}"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toStartOf="@id/actions_share"
+      app:layout_constraintStart_toEndOf="@id/actions_votes"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_m_with_padding_m"
+        android:layout_height="@dimen/size_m_with_padding_m"
+        android:padding="@dimen/space_m"
+        app:srcCompat="@drawable/ic_comment_black_24dp"
+        app:tint="@color/whiteAlmost"/>
+
+      <TextView
+        style="@style/TextAppearance.SubtitleMini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:text="@{post.commentsString}"
+        tools:text="183"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+      android:id="@+id/actions_share"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="@dimen/space_m"
+      android:paddingEnd="@dimen/space_m"
+      android:layout_marginEnd="@dimen/space_m"
+      android:foreground="?attr/selectableItemBackground"
+      android:gravity="center_vertical"
+      android:onClick="@{shareClickListener}"
+      android:orientation="horizontal"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@id/actions_comments"
+      app:layout_constraintTop_toTopOf="parent">
+
+      <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="@dimen/size_m_with_padding_m"
+        android:layout_height="@dimen/size_m_with_padding_m"
+        android:padding="@dimen/space_m"
+        app:srcCompat="@drawable/ic_share_black_24dp"
+        app:tint="@color/whiteAlmost"/>
+
+      <TextView
+        style="@style/TextAppearance.SubtitleMini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_s"
+        android:text="Share"/>
+
+    </LinearLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

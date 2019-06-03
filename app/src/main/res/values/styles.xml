@@ -1,0 +1,53 @@
+<resources>
+
+  <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:statusBarColor">@color/blackPure</item>
+
+    <item name="android:windowBackground">@color/grayDarkest</item>
+    <item name="android:textColor">@color/whiteEasy</item>
+
+  </style>
+
+  <style name="ActionBar" parent="AppTheme">
+    <item name="android:background">@color/blackAlmost</item>
+    <item name="elevation">0dp</item>
+    <item name="android:textColorPrimary">@color/whiteEasy</item>
+    <item name="android:textColorSecondary">@color/gray</item>
+    <item name="actionMenuTextColor">@color/whiteEasy</item>
+    <item name="colorControlNormal">@color/whiteEasy</item>
+  </style>
+
+  <style name="TextAppearance" parent="AppTheme"/>
+
+  <style name="TextAppearance.Title">
+    <item name="android:textSize">@dimen/font_size_l</item>
+    <item name="android:textColor">@color/whiteEasy</item>
+  </style>
+
+  <style name="TextAppearance.Subtitle">
+    <item name="android:textSize">@dimen/font_size_m</item>
+    <item name="android:textColor">@color/whiteAlmost</item>
+    <item name="android:textAllCaps">true</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="TextAppearance.SubtitleMini">
+    <item name="android:textSize">@dimen/font_size_s</item>
+    <item name="android:textColor">@color/whiteAlmost</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:textAllCaps">true</item>
+  </style>
+
+  <style name="TextAppearance.Body">
+    <item name="android:textSize">@dimen/font_size_m</item>
+    <item name="android:textColor">@color/whiteAlmost</item>
+  </style>
+
+</resources>
