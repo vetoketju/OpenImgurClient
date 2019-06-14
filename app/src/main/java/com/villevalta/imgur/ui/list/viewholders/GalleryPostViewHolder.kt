@@ -11,6 +11,8 @@ class GalleryPostViewHolder(view: View) :
 
   private val binding = ListItemGallerypostFullBinding.bind(view)
 
+  private var model: GalleryPostAdapterItem? = null
+
   override fun onPageScrollStateChanged(state: Int) {
   }
 
@@ -19,6 +21,7 @@ class GalleryPostViewHolder(view: View) :
 
   override fun onPageSelected(position: Int) {
     binding.currentImage = position + 1
+    model?.pagerPosition = position
   }
 
   init {
@@ -26,8 +29,10 @@ class GalleryPostViewHolder(view: View) :
   }
 
   override fun bind(model: GalleryPostAdapterItem) {
+    this.model = model
     binding.post = model.post
-    binding.currentImage = 1
+    binding.imagePager.currentItem = model.pagerPosition
+    binding.currentImage = model.pagerPosition + 1
   }
 
 }

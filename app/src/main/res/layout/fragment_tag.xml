@@ -90,15 +90,28 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.appcompat.widget.Toolbar
-          app:menu="@menu/list_filter"
           android:id="@+id/tagToolbar"
           android:layout_width="match_parent"
           android:layout_height="?attr/actionBarSize"
-          app:layout_collapseMode="pin"/>
+          app:layout_collapseMode="pin"
+          app:menu="@menu/list_filter"/>
 
       </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+      android:id="@+id/fab_filter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginEnd="@dimen/space_l"
+      android:src="@drawable/ic_filter_list_black_24dp"
+      android:tint="@color/whiteAlmost"
+      app:layout_behavior="com.villevalta.imgur.ui.behavior.ScrollAwareFABBehavior"
+      app:fabSize="mini"
+      app:layout_anchor="@id/tagAppBar"
+      app:layout_anchorGravity="bottom|end|right"
+      />
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

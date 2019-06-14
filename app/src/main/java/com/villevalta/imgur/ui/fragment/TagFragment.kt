@@ -15,6 +15,8 @@ import com.villevalta.imgur.model.ListFilter
 import com.villevalta.imgur.model.Sort
 import com.villevalta.imgur.model.Thumb
 import com.villevalta.imgur.model.Window
+import com.villevalta.imgur.ui.dialog.ListFilterEditDialog
+import com.villevalta.imgur.ui.dialog.ListFilterEditDialogListener
 import com.villevalta.imgur.ui.fragment.common.BaseFragment
 import com.villevalta.imgur.ui.list.ListFragment
 import com.villevalta.imgur.ui.list.adapter.CommonLinearPagedAdapter
@@ -24,8 +26,9 @@ import com.villevalta.imgur.utils.GlideApp
 import com.villevalta.imgur.utils.UrlUtils
 import com.villevalta.imgur.viewmodel.TagViewModel
 import kotlinx.android.synthetic.main.fragment_list.*
+import kotlinx.android.synthetic.main.fragment_viral.*
 
-class TagFragment : BaseFragment(R.layout.fragment_tag) {
+class TagFragment : BaseFragment(R.layout.fragment_tag), ListFilterEditDialogListener {
 
   var bgLoadStarted = false
   lateinit var binding: FragmentTagBinding
@@ -48,6 +51,14 @@ class TagFragment : BaseFragment(R.layout.fragment_tag) {
     fragmentManager?.commit {
       listFragment = TagPostsFragment()
       replace(R.id.listFragment, listFragment)
+    }
+
+    fab_filter.setOnClickListener {
+      fragmentManager?.let {
+        ListFilterEditDialog.newInstance(vm.tagParams.value?.second)
+          .apply { listener = this@TagFragment }
+          .show(it, "dialog")
+      }
     }
 
     vm.tagModel.observe(viewLifecycleOwner, Observer {
@@ -79,6 +90,10 @@ class TagFragment : BaseFragment(R.layout.fragment_tag) {
         sort = Sort.viral,
         window = Window.day
       )
+  }
+
+  override fun onListFilterApply(newFilter: ListFilter) {
+    vm.tagParams.postValue(vm.tagParams.value?.copy(second = newFilter))
   }
 
   fun setBackGround(hash: String?) {
