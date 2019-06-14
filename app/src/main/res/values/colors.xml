@@ -11,5 +11,17 @@
   <color name="grayDarker">#3c4043</color>
   <color name="grayDarkest">#313235</color>
   <color name="blackAlmost">#202124</color>
-  <color name="blackPure">#000000</color>
+  <color name="blackPure">#FF000000</color>
+
+  <!-- Black with alpha -->
+  <color name="blackPure10">#1A000000</color>
+  <color name="blackPure20">#33000000</color>
+  <color name="blackPure30">#4D000000</color>
+  <color name="blackPure40">#66000000</color>
+  <color name="blackPure50">#80000000</color>
+  <color name="blackPure60">#99000000</color>
+  <color name="blackPure70">#B3000000</color>
+  <color name="blackPure80">#CC000000</color>
+  <color name="blackPure90">#E6000000</color>
+
 </resources>

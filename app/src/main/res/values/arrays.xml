@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string-array name="list_filter_section">
+    <item>@string/select</item>
+    <item>Hot</item>
+    <item>Top</item>
+    <item>User</item>
+  </string-array>
+
+  <string-array name="list_filter_sort">
+    <item>@string/select</item>
+    <item>Viral</item>
+    <item>Top</item>
+    <item>Time</item>
+    <item>Rising</item>
+  </string-array>
+
+  <string-array name="list_filter_window">
+    <item>@string/select</item>
+    <item>Day</item>
+    <item>Week</item>
+    <item>Month</item>
+    <item>Year</item>
+    <item>All</item>
+  </string-array>
+</resources>

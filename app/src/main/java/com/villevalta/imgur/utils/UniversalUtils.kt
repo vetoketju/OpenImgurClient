@@ -91,3 +91,9 @@ inline fun <T> tryOrNull(f: () -> T) = try {
 } catch (_: Exception) {
   null
 }
+
+inline fun <T : Any> ifLet(vararg elements: T?, block: (List<T>) -> Unit) {
+  if (elements.all { it != null }) {
+    block(elements.filterNotNull())
+  }
+}

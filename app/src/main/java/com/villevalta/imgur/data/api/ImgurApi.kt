@@ -2,6 +2,7 @@ package com.villevalta.imgur.data.api
 
 import com.villevalta.imgur.model.ListFilter
 import com.villevalta.imgur.model.Post
+import com.villevalta.imgur.model.Tag
 import kotlinx.coroutines.Deferred
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -23,11 +24,11 @@ interface ImgurApi {
     @Query("album_previews") albumPreviews: Boolean? = true
   ): WrappedResponse<List<Post>>
 
-
-  @GET("gallery/t/{tagName}/{listFilter}")
+  @GET("gallery/t/{tagName}/{listFilter}/{page}")
   fun getTagPosts(
     @Path("tagName") tagName: String,
-    @Path("listFilter") listFilter: ListFilter
-  ): WrappedResponse<List<Post>>
+    @Path("listFilter") listFilter: ListFilter,
+    @Path("page") page: Int
+    ): WrappedResponse<Tag>
 
 }

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <item
+    android:id="@+id/nav_viral"
+    android:icon="@drawable/ic_whatshot_black_24dp"
+    android:title="@string/menu_viral"/>
+  <item
+    android:id="@+id/nav_tags"
+    android:icon="@drawable/ic_tag_black_24dp"
+    android:title="@string/menu_tags"/>
+
+  <item
+    android:id="@+id/nav_favs"
+    android:icon="@drawable/ic_favorite_black_24dp"
+    android:title="@string/menu_favs"/>
+
+  <item
+    android:id="@+id/nav_reddits"
+    android:icon="@drawable/ic_dashboard_black_24dp"
+    android:title="@string/menu_reddits"/>
+
+  <item
+    android:id="@+id/nav_profile"
+    android:icon="@drawable/ic_person_black_24dp"
+    android:title="@string/menu_profile"/>
+
+
+  <!--<group android:checkableBehavior="single">-->
+</menu>

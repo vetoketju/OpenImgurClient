@@ -2,6 +2,7 @@ package com.villevalta.imgur.data.datasource
 
 import com.villevalta.imgur.model.ListFilter
 import com.villevalta.imgur.model.Post
+import com.villevalta.imgur.ui.list.adaptermodels.AdapterItem
 import com.villevalta.imgur.utils.Coroutines
 import com.villevalta.imgur.utils.Status
 
@@ -44,5 +45,12 @@ class GalleryDataSource(private val listFilter: ListFilter) : BaseDataSource<Pos
 }
 
 class GalleryDataSourceFactory(private val filter: ListFilter) : BaseDataSourceFactory<Post>() {
+  override fun onCreate() = GalleryDataSource(filter)
+}
+
+class AdapterItemGalleryDataSourceFactory(
+  private val filter: ListFilter,
+  mapFunc: AdapterItemMapFunction<Post>
+) : MappableBaseDataSourceFactory<Post, AdapterItem<Post>>(mapFunc) {
   override fun onCreate(): BaseDataSource<Post> = GalleryDataSource(filter)
 }

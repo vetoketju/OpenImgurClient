@@ -1,7 +1,7 @@
 package com.villevalta.imgur.model
 
 import android.os.Parcelable
-import com.villevalta.imgur.ui.fragment.common.BaseDiffItemCallback
+import com.villevalta.imgur.ui.list.diffs.BaseDiffItemCallback
 import com.villevalta.imgur.utils.toUnitString
 import kotlinx.android.parcel.Parcelize
 
@@ -34,7 +34,7 @@ data class GalleryPost(
   val layout: String,                   // The view layout of the album.
   val views: Int,                       // The number of image views
   val images_count: Int,                // The total number of images in the album
-  val images: List<Image>               // of Images	An array of all the images in the album (only available when requesting the direct album)
+  val images: List<Image>               // of Images An array of all the images in the album (only available when requesting the direct album)
 ) : Post(), Parcelable
 
 @Parcelize

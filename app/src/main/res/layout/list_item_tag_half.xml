@@ -4,8 +4,8 @@
   xmlns:tools="http://schemas.android.com/tools">
   <data>
     <variable
-      name="tag"
-      type="com.villevalta.imgur.ui.fragment.TagListViewModel"/>
+      name="item"
+      type="com.villevalta.imgur.ui.list.adaptermodels.TagAdapterItem"/>
   </data>
 
   <androidx.cardview.widget.CardView
@@ -26,7 +26,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:alpha="0.5"
-        android:background="@{tag.getAccentColorDefaultBlack()}"
+        android:background="@{item.model.getAccentColorDefaultBlack()}"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,9 +49,9 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:background="@drawable/bg_pill"
-        android:backgroundTint="@{tag.getAccentColorDefaultBlack()}"
+        android:backgroundTint="@{item.model.getAccentColorDefaultBlack()}"
         android:gravity="center"
-        android:text="@{tag.title}"
+        android:text="@{item.model.title}"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

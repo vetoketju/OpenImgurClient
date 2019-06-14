@@ -1,7 +1,6 @@
 package com.villevalta.imgur.ui.widget
 
 import android.content.Context
-import android.net.Uri
 import android.util.AttributeSet
 import android.view.View
 import android.widget.FrameLayout
@@ -65,11 +64,13 @@ class ImageContainer @kotlin.jvm.JvmOverloads constructor(
       val isVideo = it.animated && it.mp4 != null
 
       if (isVideo) {
-        // Use exoplayer and surface for better performance
-        Timber.d("Starting video: ${it.mp4}")
-        widget_image_container_video.visible()
-        widget_image_container_video.setVideoURI(Uri.parse(it.mp4))
-        //widget_image_container_video.start()
+        //  Use surfaceview for better performance
+        // Timber.d("Starting video: ${it.mp4}")
+        // widget_image_container_video.visible()
+        // widget_image_container_video.setVideoURI(Uri.parse(it.mp4))
+        // widget_image_container_video.start()
+        widget_image_container_image.visible()
+        widget_image_container_image.setImageResource(R.drawable.ic_launcher_background)
 
       } else {
         widget_image_container_image.visible()

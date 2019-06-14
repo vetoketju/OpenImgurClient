@@ -3,7 +3,7 @@ package com.villevalta.imgur.utils
 import androidx.lifecycle.LiveData
 import androidx.paging.PagedList
 
-open class Resource<out T, E>(val status: Status, val data: T?, val error: E?) {
+open class Resource<out T, out E>(val status: Status, val data: T?, val error: E?) {
 
   companion object {
 

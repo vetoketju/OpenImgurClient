@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/nav_viral">
+
+  <fragment
+    android:id="@+id/nav_viral"
+    android:label="Viral"
+    android:name="com.villevalta.imgur.ui.fragment.ViralPostsListFragment"/>
+
+  <fragment
+    android:id="@+id/nav_tags"
+    android:label="Tags"
+    android:name="com.villevalta.imgur.ui.fragment.TagsListFragment">
+
+    <action
+      android:id="@+id/action_tags_list_to_tag_detail_fragment"
+      app:destination="@id/tag_detail_fragment"
+      />
+
+  </fragment>
+
+  <fragment
+
+    android:id="@+id/tag_detail_fragment"
+    android:label="Tag"
+    android:name="com.villevalta.imgur.ui.fragment.TagFragment">
+    <deepLink app:uri="https://imgur.com/t/{tagName}"/>
+    <argument
+      android:defaultValue="@null"
+      android:name="name"
+      app:argType="string"
+      app:nullable="true"/>
+    <argument
+      android:defaultValue="@null"
+      android:name="tag"
+      app:argType="com.villevalta.imgur.model.Tag"
+      app:nullable="true"/>
+  </fragment>
+
+  <action
+    android:id="@+id/action_global_tagFrag"
+    app:destination="@+id/tag_detail_fragment"
+    app:launchSingleTop="true"
+    />
+
+</navigation>

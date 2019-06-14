@@ -26,6 +26,14 @@
 
   <style name="TextAppearance" parent="AppTheme"/>
 
+  <style name="TextAppearance.ToolbarTitle">
+    <item name="fontFamily">sans-serif-medium</item>
+    <item name="android:fontFamily">sans-serif-medium</item>
+    <item name="android:textSize">20sp</item>
+    <item name="android:letterSpacing">0.0125</item>
+    <item name="android:textColor">@color/whiteEasy</item>
+  </style>
+
   <style name="TextAppearance.Title">
     <item name="android:textSize">@dimen/font_size_l</item>
     <item name="android:textColor">@color/whiteEasy</item>
@@ -48,6 +56,20 @@
   <style name="TextAppearance.Body">
     <item name="android:textSize">@dimen/font_size_m</item>
     <item name="android:textColor">@color/whiteAlmost</item>
+  </style>
+
+  <style name="Divider">
+    <item name="android:background">@color/whiteEasy</item>
+  </style>
+
+  <style name="Divider.Horizontal">
+    <item name="android:layout_height">1dp</item>
+    <item name="android:layout_width">match_parent</item>
+  </style>
+
+  <style name="Divider.Vertical">
+    <item name="android:layout_height">match_parent</item>
+    <item name="android:layout_width">1dp</item>
   </style>
 
 </resources>

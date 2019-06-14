@@ -25,6 +25,7 @@
   <dimen name="font_size_s">10sp</dimen>
   <dimen name="font_size_m">14sp</dimen>
   <dimen name="font_size_l">18sp</dimen>
-  <dimen name="font_size_xl">24sp</dimen>
+  <dimen name="font_size_xl">20sp</dimen>
+  <dimen name="font_size_xxl">24sp</dimen>
 
 </resources>
