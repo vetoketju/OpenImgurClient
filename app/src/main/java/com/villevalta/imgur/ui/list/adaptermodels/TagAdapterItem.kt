@@ -4,15 +4,13 @@ import com.villevalta.imgur.R
 import com.villevalta.imgur.model.Tag
 import com.villevalta.imgur.ui.viewmodel.TagModel
 
-class TagAdapterItem(tag: Tag) : AdapterItem<Tag>(tag){
+class TagAdapterItem(tag: Tag) : AdapterItem<Tag>(tag) {
 
   val model = TagModel(tag)
 
-  override fun getLayoutId(): Int {
-    return R.layout.list_item_tag_half
-  }
+  override fun getLayoutId() = R.layout.list_item_tag_half
 
-  override fun getIdentifyingField(): Any = item.name
+  override fun getIdentifyingField() = item.name
 
   var callback: TagCallBacks? = null
 

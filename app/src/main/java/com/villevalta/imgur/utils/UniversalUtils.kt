@@ -97,3 +97,7 @@ inline fun <T : Any> ifLet(vararg elements: T?, block: (List<T>) -> Unit) {
     block(elements.filterNotNull())
   }
 }
+
+fun Boolean?.toInt(): Int {
+  return if (this == true) 1 else 0
+}

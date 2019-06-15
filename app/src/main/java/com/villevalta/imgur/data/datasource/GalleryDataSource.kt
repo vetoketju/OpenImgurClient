@@ -37,6 +37,7 @@ class GalleryDataSource(private val listFilter: ListFilter) : BaseDataSource<Pos
         callback.invoke(page + 1, result.data)
         status.postValue(Status.SUCCESS)
       } catch (e: Throwable) {
+        // TODO: INVESTIGATE! This is not getting passed to repository or it does not fire
         error.postValue(e)
         status.postValue(Status.ERROR)
       }

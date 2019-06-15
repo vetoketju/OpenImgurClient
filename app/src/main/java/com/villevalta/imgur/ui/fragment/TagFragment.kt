@@ -19,7 +19,7 @@ import com.villevalta.imgur.ui.dialog.ListFilterEditDialog
 import com.villevalta.imgur.ui.dialog.ListFilterEditDialogListener
 import com.villevalta.imgur.ui.fragment.common.BaseFragment
 import com.villevalta.imgur.ui.list.ListFragment
-import com.villevalta.imgur.ui.list.adapter.CommonLinearPagedAdapter
+import com.villevalta.imgur.ui.list.adapter.StatefulCommonLinearPagedAdapter
 import com.villevalta.imgur.ui.list.adaptermodels.AdapterItem
 import com.villevalta.imgur.ui.viewmodel.TagModel
 import com.villevalta.imgur.utils.GlideApp
@@ -71,8 +71,10 @@ class TagFragment : BaseFragment(R.layout.fragment_tag), ListFilterEditDialogLis
     })
 
     vm.tagPosts.observe(viewLifecycleOwner, Observer {
+      it?.let { res ->
+        listFragment.adapter.state = res.status to res.error?.message
+      }
       it?.data?.let { tagListPair ->
-
         @Suppress("UNCHECKED_CAST")
         val posts = tagListPair.second as PagedList<AdapterItem<Any>>?
         posts?.let {
@@ -107,12 +109,11 @@ class TagFragment : BaseFragment(R.layout.fragment_tag), ListFilterEditDialogLis
 
   }
 
-
 }
 
 class TagPostsFragment : ListFragment() {
 
-  val adapter = CommonLinearPagedAdapter()
+  val adapter = StatefulCommonLinearPagedAdapter()
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
