@@ -1,8 +1,16 @@
-# OpenImgurClient
+# OpenImgurClient Android
+### NOT AFFILIATED WITH OR APPROVED BY IMGUR
 
-NOT AFFILIATED WITH OR APPROVED BY IMGUR
+Open source Android client for browsing [imgur](https://imgur.com) image service using [Imgur API](https://apidocs.imgur.com/). Serves as a showcase for the great Imgur API and Android Jetpack best practices.
 
-To build, add variable `IMGUR_CLIENT_ID=<YOUR-ID-HERE>` in your gradle.properties.
+Build using [Android Jetpack libraries](https://developer.android.com/jetpack)
+- Kotlin and Kotlin Coroutines
+- MVVM Architechture with repository fetching data from Room database and/or Retrofit rest-api-client
+- Databinding, LiveData, ViewModel, Paging
+- Navigation library
+
+## Building and running
+To build, add variable `IMGUR_CLIENT_ID=<YOUR-ID-HERE>` in your `gradle.properties`.
 Generate your api key here: https://imgur.com/account/settings/apps
 
 
