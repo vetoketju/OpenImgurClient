@@ -21,13 +21,21 @@ class ImagesViewPager @kotlin.jvm.JvmOverloads constructor(
 
   var modeFragments = false
 
+  var playing = false
+    set(value) {
+      field = value
+      (adapter as? ImagesViewAdapter)?.views?.forEach {
+        it.playing = playing
+      }
+    }
+
   init {
     if (modeFragments) {
       if (context is FragmentActivity) {
         adapter = ImagesViewFragmentPagerAdapter(context.supportFragmentManager)
       }
     } else {
-      adapter = ImagesViewFragmentAdapter(context)
+      adapter = ImagesViewAdapter(context)
     }
   }
 
@@ -38,7 +46,7 @@ class ImagesViewPager @kotlin.jvm.JvmOverloads constructor(
         it.images.addAll(list)
         it.notifyDataSetChanged()
       }
-      (adapter as? ImagesViewFragmentAdapter)?.let {
+      (adapter as? ImagesViewAdapter)?.let {
         it.images.clear()
         it.images.addAll(list)
         it.notifyDataSetChanged()
@@ -61,7 +69,7 @@ class ImagesViewPager @kotlin.jvm.JvmOverloads constructor(
     }
   }
 
-  class ImagesViewFragmentAdapter(
+  class ImagesViewAdapter(
     private val context: Context,
     val images: MutableList<Image> = mutableListOf()
   ) : PagerAdapter() {
@@ -69,6 +77,8 @@ class ImagesViewPager @kotlin.jvm.JvmOverloads constructor(
     override fun isViewFromObject(view: View, `object`: Any): Boolean {
       return view == `object`
     }
+
+    val views = mutableListOf<ImageContainer>()
 
     override fun getCount() = images.size
 
@@ -84,11 +94,13 @@ class ImagesViewPager @kotlin.jvm.JvmOverloads constructor(
         LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
       )
 
+      views.add(imageContainer)
       return imageContainer
     }
 
-    override fun destroyItem(container: ViewGroup, position: Int, `object`: Any) {
-      container.removeView(`object` as? View)
+    override fun destroyItem(container: ViewGroup, position: Int, item: Any) {
+      views.remove(item)
+      container.removeView(item as? View)
     }
 
     override fun getPageTitle(position: Int): CharSequence? {

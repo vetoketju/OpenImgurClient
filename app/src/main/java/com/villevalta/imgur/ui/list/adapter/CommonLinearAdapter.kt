@@ -14,6 +14,12 @@ import com.villevalta.imgur.utils.toInt
 
 open class CommonLinearAdapter : BaseListAdapter<AdapterItem<Any>>() {
 
+  fun itemsForEachIndexed(f: (index: Int, item: AdapterItem<*>?) -> Unit) {
+    for (i in 0 until itemCount) {
+      f(i, getItem(i))
+    }
+  }
+
   override fun getViewHolder(view: View, viewType: Int): BaseViewHolder<AdapterItem<Any>> {
     return when (viewType) {
       GalleryPostAdapterItem.layoutID -> GalleryPostViewHolder(view)
@@ -25,6 +31,12 @@ open class CommonLinearAdapter : BaseListAdapter<AdapterItem<Any>>() {
 }
 
 open class CommonLinearPagedAdapter : BasePagedListAdapter<AdapterItem<Any>>() {
+
+  fun itemsForEachIndexed(f: (index: Int, item: AdapterItem<*>?) -> Unit) {
+    for (i in 0 until itemCount) {
+      f(i, getItem(i))
+    }
+  }
 
   override fun getViewHolder(view: View, viewType: Int): BaseViewHolder<AdapterItem<Any>> {
     return when (viewType) {

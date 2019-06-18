@@ -8,6 +8,10 @@ class ImagePostViewHolder(view: View) : BaseViewHolder<ImagePostAdapterItem>(vie
 
   private val binding = ListItemImagepostFullBinding.bind(view)
 
+  fun setPlayingIfGif(playing: Boolean){
+    binding.image.playing = playing
+  }
+
   override fun bind(model: ImagePostAdapterItem) {
     binding.post = model.post
   }

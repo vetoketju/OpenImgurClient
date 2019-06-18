@@ -13,6 +13,10 @@ class GalleryPostViewHolder(view: View) :
 
   private var model: GalleryPostAdapterItem? = null
 
+  fun setPlayingIfGif(playing: Boolean){
+    binding.imagePager.playing = playing
+  }
+
   override fun onPageScrollStateChanged(state: Int) {
   }
 

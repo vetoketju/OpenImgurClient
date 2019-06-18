@@ -9,7 +9,7 @@
     android:id="@+id/post_list_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:name="com.villevalta.imgur.ui.fragment.PostsListFragment"
+    android:name="com.villevalta.imgur.ui.fragment.GalleryPostsListFragment"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
   <com.google.android.material.floatingactionbutton.FloatingActionButton

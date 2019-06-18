@@ -9,21 +9,39 @@
 
   <androidx.appcompat.widget.AppCompatImageView
     android:id="@+id/widget_image_container_image"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
     android:adjustViewBounds="true"
     app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:layout_height="200dp"/>
+    tools:src="@drawable/ic_launcher_background"/>
 
-  <VideoView
+  <com.villevalta.imgur.ui.widget.VideoSurface
     android:id="@+id/widget_image_container_video"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:visibility="gone"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:visibility="visible"
     app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"/>
+
+  <TextView
+    android:id="@+id/debug_indicator"
+    android:textStyle="bold"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_s"
+    android:background="@color/colorAccent"
+    android:gravity="center"
+    android:text="TEST"
+    android:textAllCaps="true"
+    android:visibility="gone"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    tools:layout_height="200dp"
-    tools:visibility="visible"/>
+    />
 
 </merge>
