@@ -12,6 +12,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:name="com.villevalta.imgur.ui.adapter.ItemFragment"
+    tools:listitem="@layout/list_item_tag_half"
     tools:context=".ui.fragment.common.ListFragment"/>
 
 </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

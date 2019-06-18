@@ -18,6 +18,7 @@
     app:cardElevation="4dp"
     app:contentPadding="0dp"
     tools:layout_width="220dp">
+
     <androidx.constraintlayout.widget.ConstraintLayout
       android:layout_width="match_parent"
       android:layout_height="100dp">
@@ -37,6 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:adjustViewBounds="true"
+        tools:src="@tools:sample/backgrounds/scenic"
         android:scaleType="centerCrop"/>
 
       <TextView
@@ -58,7 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:backgroundTint="@color/colorAccent"
-        tools:text="this is name that is very long"/>
+        tools:text="@tools:sample/lorem"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
   </androidx.cardview.widget.CardView>
